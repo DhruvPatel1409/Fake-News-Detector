@@ -1,11 +1,12 @@
 import streamlit as st
 import pickle
 import re
+import nltk
 from nltk.stem import PorterStemmer
 from sklearn.feature_extraction.text import TfidfVectorizer
 from nltk.corpus import stopwords
 
-# Load the pre-trained model and TF-IDF vectorizer
+nltk.download('stopwords')
 vector_form = pickle.load(open('vector.pkl', 'rb'))
 loaded_model = pickle.load(open('news_model.pkl', 'rb'))
 
